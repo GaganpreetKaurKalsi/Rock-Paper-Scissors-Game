@@ -11,7 +11,8 @@ Rock Paper Scissors Game made using tkinter in python
 1. Fork the repository.
 2. Download the repository using github desktop or directly download it.
 3. Open it with either pycharm or any other IDE. <ins>Note:- The libraries like sqlite, tkinter, PIL, random should be downloaded in your pc.</ins>
-4. Run the file called LoginSignupForm.py.
+4. Run the functions create() and LeaderboardCreate() to create the .db file.
+5. Run the file called LoginSignupForm.py.
 
 >  **Additional Information :-** You can change the number of plays in one set by changing the value of variable "turns" <br>
 
