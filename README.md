@@ -15,11 +15,11 @@ Rock Paper Scissors Game made using tkinter in python
 
 >  **Additional Information :-** You can change the number of plays in one set by changing the value of variable "turns" <br>
 
-![SNIP](turnSC.JPG)
+![SNIP](images/turnSC.JPG)
 
 ## Screenshots :- 
-![SNIP](SignupSC.JPG)<br>
-![SNIP](LoginSC.JPG)<br>
-![SNIP](WelcomePageSC.JPG)<br>
-![SNIP](GameSC.JPG)<br>
-![SNIP](LeaderboardSC.JPG)<br>
+![SNIP](images/SignupSC.JPG)<br>
+![SNIP](images/LoginSC.JPG)<br>
+![SNIP](images/WelcomePageSC.JPG)<br>
+![SNIP](images/GameSC.JPG)<br>
+![SNIP](images/LeaderboardSC.JPG)<br>
