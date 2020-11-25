@@ -28,3 +28,5 @@ Rock Paper Scissors Game made using tkinter in python
 <br>
 
 ## **FORK it to USE it** :wink:
+> In case the images don't load check the path of the images in the code.
+> If there is any issue with the availability of library, download it using pip install.
