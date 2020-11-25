@@ -23,3 +23,8 @@ Rock Paper Scissors Game made using tkinter in python
 ![SNIP](images/WelcomePageSC.JPG)<br>
 ![SNIP](images/GameSC.JPG)<br>
 ![SNIP](images/LeaderboardSC.JPG)<br>
+![SNIP](images/ResultSC.JPG)<br>
+<br>
+<br>
+
+## **FORK it to USE it** :wink:
