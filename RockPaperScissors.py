@@ -15,17 +15,17 @@ turns = 5
 rHandPhoto = PhotoImage(file = 'rHand.png')
 pHandPhoto = PhotoImage(file = 'pHand.png')
 sHandPhoto = PhotoImage(file = 'sHand.png')
-rock = Image.open("Rockimg.jpg")
+rock = Image.open("RockPaperScissorsImages/Rockimg.jpg")
 rockImage = ImageTk.PhotoImage(rock)
-paper = Image.open("Paperimg.jpg")
+paper = Image.open("RockPaperScissorsImages/Paperimg.jpg")
 paperImage = ImageTk.PhotoImage(paper)
-scissors = Image.open("Scissorsimg.jpg")
+scissors = Image.open("RockPaperScissorsImages/Scissorsimg.jpg")
 scissorImage = ImageTk.PhotoImage(scissors)
-win = Image.open("YouWin.jpg")
+win = Image.open("RockPaperScissorsImages/YouWin.jpg")
 winImage = ImageTk.PhotoImage(win)
-lose = Image.open("YouLose.jpg")
+lose = Image.open("RockPaperScissorsImages/YouLose.jpg")
 loseImage = ImageTk.PhotoImage(lose)
-tie = Image.open("YouTie.jpg")
+tie = Image.open("RockPaperScissorsImages/YouTie.jpg")
 tieImage = ImageTk.PhotoImage(tie)
 
 
@@ -234,7 +234,7 @@ def youPick(yourChoice):
             message = 'You Tied!!'
         top = Toplevel()
         top.geometry('300x300')
-        confetiImg = PhotoImage(file = "confeti.gif")
+        confetiImg = PhotoImage(file = "RockPaperScissorsImages/confeti.gif")
         confetiLabel = Label(top, image = confetiImg)
         confetiLabel.image = confetiImg
         confetiLabel.grid(row = 0, column = 0)

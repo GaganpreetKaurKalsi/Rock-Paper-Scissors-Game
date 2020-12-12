@@ -182,7 +182,7 @@ def youPick(yourChoice):
         top = Toplevel()
         top.title("Result")
         top.geometry('300x300')
-        confetiImg = PhotoImage(file="confeti.gif")
+        confetiImg = PhotoImage(file="RockPaperScissorsImages/confeti.gif")
         confetiLabel = Label(top, image=confetiImg)
         confetiLabel.image = confetiImg
         confetiLabel.grid(row=0, column=0)
@@ -227,20 +227,20 @@ def start():
     compWin = 0
 
     # ----------------Image set----------------
-    rHandPhoto = PhotoImage(file='rHand.png')
-    pHandPhoto = PhotoImage(file='pHand.png')
-    sHandPhoto = PhotoImage(file='sHand.png')
-    rock = Image.open("Rockimg.jpg")
+    rHandPhoto = PhotoImage(file='RockPaperScissorsImages/rHand.png')
+    pHandPhoto = PhotoImage(file='RockPaperScissorsImages/pHand.png')
+    sHandPhoto = PhotoImage(file='RockPaperScissorsImages/sHand.png')
+    rock = Image.open("RockPaperScissorsImages/Rockimg.jpg")
     rockImage = ImageTk.PhotoImage(rock)
-    paper = Image.open("Paperimg.jpg")
+    paper = Image.open("RockPaperScissorsImages/Paperimg.jpg")
     paperImage = ImageTk.PhotoImage(paper)
-    scissors = Image.open("Scissorsimg.jpg")
+    scissors = Image.open("RockPaperScissorsImages/Scissorsimg.jpg")
     scissorImage = ImageTk.PhotoImage(scissors)
-    win = Image.open("YouWin.jpg")
+    win = Image.open("RockPaperScissorsImages/YouWin.jpg")
     winImage = ImageTk.PhotoImage(win)
-    lose = Image.open("YouLose.jpg")
+    lose = Image.open("RockPaperScissorsImages/YouLose.jpg")
     loseImage = ImageTk.PhotoImage(lose)
-    tie = Image.open("YouTie.jpg")
+    tie = Image.open("RockPaperScissorsImages/YouTie.jpg")
     tieImage = ImageTk.PhotoImage(tie)
 
     # ------------------------------------------
@@ -261,20 +261,20 @@ def welcomeUserPage():
     welcomeUser.grid(row = 0, column = 0, columnspan = 2)
 
     if UserGender == "Male":
-        maleimg = ImageTk.PhotoImage(Image.open("Male.jpg"))
+        maleimg = ImageTk.PhotoImage(Image.open("RockPaperScissorsImages/Male.jpg"))
         maleLabel = Label(root ,image=maleimg)
         maleLabel.image = maleimg
         maleLabel.grid(row=1, column=0)
-        compimg = PhotoImage(file = "computer.png")
+        compimg = PhotoImage(file = "RockPaperScissorsImages/computer.png")
         compLabel = Label(root, image=compimg)
         compLabel.image = compimg
         compLabel.grid(row=1, column=1)
     else:
-        femaleimg = ImageTk.PhotoImage(Image.open("Female.jpg"))
+        femaleimg = ImageTk.PhotoImage(Image.open("RockPaperScissorsImages/Female.jpg"))
         femaleLabel = Label(root, image = femaleimg)
         femaleLabel.image = femaleimg
         femaleLabel.grid(row=1, column = 0)
-        compimg = PhotoImage(file="computer.png")
+        compimg = PhotoImage(file="RockPaperScissorsImages/computer.png")
         compLabel = Label(root, image=compimg)
         compLabel.image = compimg
         compLabel.grid(row=1, column=1)
