@@ -1,3 +1,17 @@
+""" INSTRUCTIONS :-
+1) If you are running the project for the first time on your system, then call the functions create() and LeaderboardCreate()
+to create the required database for the project. This should create .db files in the repository same as this (.py) file is in.
+After you have run these 2 functions for once comment the function calls as the required .db files have already been created.
+Now you can run this .py file any number of times. The database files needs to created only once.
+
+create() - 330
+LeaderboardCreate() - 351
+
+Note : Do remember to comment these two function calls after you have called them once. These functions are to be run for only once.
+
+2) Change the value of turns variable according to your wish - turns variable(line no. - 34) defines how many turns are there in a single game.
+"""
+
 from tkinter import *
 import sqlite3
 from PIL import ImageTk, Image
@@ -59,7 +73,7 @@ def computerPick():
 
 # Function to play the game again after it is finished once
 def playAgain():
-    global counter, userWin, compWin
+    global counter, userWin, compWin, rHandButton, pHandButton, sHandButton
     counter = 0
     userWin = 0
     compWin = 0
@@ -166,8 +180,9 @@ def youPick(yourChoice):
             message = 'You Tied!!'
         insertToLeaderBoard()
         top = Toplevel()
+        top.title("Result")
         top.geometry('300x300')
-        confetiImg = PhotoImage(file="RockPaperScissorsImages/confeti.gif")
+        confetiImg = PhotoImage(file="confeti.gif")
         confetiLabel = Label(top, image=confetiImg)
         confetiLabel.image = confetiImg
         confetiLabel.grid(row=0, column=0)
@@ -180,13 +195,14 @@ def youPick(yourChoice):
                             command=root.quit)
         exitButton.config(font=("Times", 12))
         exitButton.pack(pady=3, padx=3)
+        rHandButton.configure(state="disabled")
+        pHandButton.configure(state="disabled")
+        sHandButton.configure(state="disabled")
         playAgainBtn = Button(messageFrame, text="PlayAgain", bg='#8953ff', fg='white', width=10, padx=3, pady=3,
                             command=playAgain)
         playAgainBtn.config(font=("Times", 12))
         playAgainBtn.pack(pady=3, padx=3)
-        rHandButton.configure(state="disabled")
-        pHandButton.configure(state="disabled")
-        sHandButton.configure(state="disabled")
+
 
 
 # Reseting the frame to original starting pictures
@@ -199,7 +215,7 @@ def reset_frame():
 
 click = ''
 
-# Function creating the GAME window reading the images
+# Function creating the GAME window, reading the images
 def start():
     global root, click, rHandPhoto, pHandPhoto, sHandPhoto, userWin, compWin, rockImage, paperImage, scissorImage, loseImage, winImage, tieImage
     root.destroy()
@@ -211,20 +227,20 @@ def start():
     compWin = 0
 
     # ----------------Image set----------------
-    rHandPhoto = PhotoImage(file='RockPaperScissorsImages/rHand.png')
-    pHandPhoto = PhotoImage(file='RockPaperScissorsImages/pHand.png')
-    sHandPhoto = PhotoImage(file='RockPaperScissorsImages/sHand.png')
-    rock = Image.open("RockPaperScissorsImages/Rockimg.jpg")
+    rHandPhoto = PhotoImage(file='rHand.png')
+    pHandPhoto = PhotoImage(file='pHand.png')
+    sHandPhoto = PhotoImage(file='sHand.png')
+    rock = Image.open("Rockimg.jpg")
     rockImage = ImageTk.PhotoImage(rock)
-    paper = Image.open("RockPaperScissorsImages/Paperimg.jpg")
+    paper = Image.open("Paperimg.jpg")
     paperImage = ImageTk.PhotoImage(paper)
-    scissors = Image.open("RockPaperScissorsImages/Scissorsimg.jpg")
+    scissors = Image.open("Scissorsimg.jpg")
     scissorImage = ImageTk.PhotoImage(scissors)
-    win = Image.open("RockPaperScissorsImages/YouWin.jpg")
+    win = Image.open("YouWin.jpg")
     winImage = ImageTk.PhotoImage(win)
-    lose = Image.open("RockPaperScissorsImages/YouLose.jpg")
+    lose = Image.open("YouLose.jpg")
     loseImage = ImageTk.PhotoImage(lose)
-    tie = Image.open("RockPaperScissorsImages/YouTie.jpg")
+    tie = Image.open("YouTie.jpg")
     tieImage = ImageTk.PhotoImage(tie)
 
     # ------------------------------------------
@@ -245,20 +261,20 @@ def welcomeUserPage():
     welcomeUser.grid(row = 0, column = 0, columnspan = 2)
 
     if UserGender == "Male":
-        maleimg = ImageTk.PhotoImage(Image.open("RockPaperScissorsImages/Male.jpg"))
+        maleimg = ImageTk.PhotoImage(Image.open("Male.jpg"))
         maleLabel = Label(root ,image=maleimg)
         maleLabel.image = maleimg
         maleLabel.grid(row=1, column=0)
-        compimg = PhotoImage(file = "RockPaperScissorsImages/computer.png")
+        compimg = PhotoImage(file = "computer.png")
         compLabel = Label(root, image=compimg)
         compLabel.image = compimg
         compLabel.grid(row=1, column=1)
     else:
-        femaleimg = ImageTk.PhotoImage(Image.open("RockPaperScissorsImages/Female.jpg"))
+        femaleimg = ImageTk.PhotoImage(Image.open("Female.jpg"))
         femaleLabel = Label(root, image = femaleimg)
         femaleLabel.image = femaleimg
         femaleLabel.grid(row=1, column = 0)
-        compimg = PhotoImage(file="RockPaperScissorsImages/computer.png")
+        compimg = PhotoImage(file="computer.png")
         compLabel = Label(root, image=compimg)
         compLabel.image = compimg
         compLabel.grid(row=1, column=1)
@@ -352,7 +368,7 @@ def insertToLeaderBoard():
     else :
         tied += 1
     played = data[4] + 1
-    rate = won/played
+    rate = round(won/played, 2)
 
     c.execute("""
         UPDATE LEADERBOARD SET
